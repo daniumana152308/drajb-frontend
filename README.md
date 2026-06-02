@@ -153,10 +153,10 @@ git push origin feature/tu-rama
 - CartDetailDto.java
 
 **Frontend:**
-- CatalogPage.tsx
-- ProductDetailPage.tsx
+- CatalogPage.tsx -Completado
+- ProductDetailPage.tsx -Completado
 - CartPage.tsx
-- Product.ts
+- Product.ts -Completado
 
 ---
 
