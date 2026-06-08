@@ -1,7 +1,7 @@
 import type { Client } from "../models/responses/Client";
-import { config } from "../config";
+import { API_URL } from "../config/config";
 
-const API_URL = `${config.api.url}/clients`;
+const CLIENTS_URL = `${API_URL}/clients`;
 
 export async function getClients(): Promise<Client[]> {
     try {
