@@ -64,7 +64,7 @@ export default function Navbar() {
 
             {/* Mobile nav */}
             {user && (
-                <div className="md:hidden border-t border-white/10 flex justify-around py-3">
+                <div className="md:hidden border-t border-white/10 flex justify-around">
                     {[
                         { path: "/home", label: "Inicio" },
                         { path: "/catalog", label: "Catálogo" },
@@ -72,17 +72,17 @@ export default function Navbar() {
                         { path: "/profile", label: "Perfil" },
                     ].map(({ path, label, badge }) => (
                         <Link key={path} to={path}
-                            className={`relative flex flex-col items-center gap-0.5 px-4 py-1.5 text-sm tracking-wide transition-all duration-200 hover:scale-110 ${active(path) ? "text-white font-medium" : "text-white/40 hover:text-white"
+                            className={`relative flex flex-col items-center justify-center gap-0.5 px-3 min-h-[44px] text-sm tracking-wide transition-all duration-200 hover:scale-110 ${active(path) ? "text-white font-medium" : "text-white/40 hover:text-white"
                                 }`}>
                             {label}
                             {badge && badge > 0 && (
-                                <span className="absolute -top-1 right-0 bg-white text-[#1e3a5f] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                                <span className="absolute top-1 right-0 bg-white text-[#1e3a5f] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                                     {badge}
                                 </span>
                             )}
                         </Link>
                     ))}
-                    <button onClick={handleLogout} className="text-white/30 text-sm tracking-wide hover:text-white transition-all duration-200 hover:scale-110 px-4 py-1.5">
+                    <button onClick={handleLogout} className="text-white/30 text-sm tracking-wide hover:text-white transition-all duration-200 hover:scale-110 px-3 min-h-[44px] flex items-center">
                         Salir
                     </button>
                 </div>

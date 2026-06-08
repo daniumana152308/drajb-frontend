@@ -77,7 +77,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right form panel */}
-      <div className="flex-1 flex items-center justify-center p-8 md:p-16">
+      <div className="flex-1 flex items-center justify-center p-6 sm:p-8 md:p-16">
         <div className="w-full max-w-lg">
 
           <div className="lg:hidden text-center mb-10">
@@ -110,7 +110,7 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             {mode === "register" && (
               <>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex-1">
                     <label className={labelClass}>Nombre</label>
                     <input name="firstName" value={form.firstName} onChange={handleChange} required placeholder="Juan" className={inputClass} />
@@ -145,7 +145,7 @@ export default function LoginPage() {
             )}
 
             <button type="submit" disabled={loading}
-              className="mt-2 w-full py-4 bg-[#1e3a5f] hover:bg-[#16304f] text-white text-base font-medium tracking-wider rounded-md transition-all duration-200 hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
+              className="mt-2 w-full py-4 min-h-[44px] bg-[#1e3a5f] hover:bg-[#16304f] text-white text-base font-medium tracking-wider rounded-md transition-all duration-200 hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
               {loading ? "Cargando..." : mode === "login" ? "Entrar" : "Crear cuenta"}
             </button>
           </form>

@@ -67,22 +67,22 @@ export default function ProductDetailPage() {
     <div className="min-h-screen w-full bg-[#f7f7f5] flex flex-col overflow-x-hidden">
       <Navbar />
 
-      <main className="flex-1 w-full px-8 md:px-16 lg:px-24 py-8">
+      <main className="flex-1 w-full px-6 sm:px-8 md:px-16 lg:px-24 py-6 sm:py-8">
 
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 mb-8 text-sm text-gray-400 tracking-wide">
-          <button onClick={() => navigate("/catalog")} className="hover:text-[#1e3a5f] hover:scale-105 transition-all duration-200">
+        <div className="flex items-center gap-2 mb-6 sm:mb-8 text-sm text-gray-400 tracking-wide">
+          <button onClick={() => navigate("/catalog")} className="hover:text-[#1e3a5f] hover:scale-105 transition-all duration-200 min-h-[44px] flex items-center">
             Catálogo
           </button>
           <span>/</span>
           <span className="text-gray-600">{design?.name}</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16 items-start">
 
           {/* Image */}
-          <div className="lg:w-2/5 flex-shrink-0">
-            <div className="w-full bg-gray-50 overflow-hidden rounded-sm flex items-center justify-center" style={{ height: '440px' }}>
+          <div className="w-full lg:w-2/5 flex-shrink-0">
+            <div className="w-full bg-gray-50 overflow-hidden rounded-sm flex items-center justify-center h-64 sm:h-80 lg:h-[440px]">
               {design?.imageUrl ? (
                 <img
                   src={design.imageUrl}
@@ -102,7 +102,7 @@ export default function ProductDetailPage() {
             <p className="text-xs text-gray-400 tracking-[0.3em] uppercase mb-2">
               Diseño — {design?.name}
             </p>
-            <h1 className="text-2xl md:text-3xl font-medium text-gray-800 mb-2 leading-snug"
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-800 mb-2 leading-snug"
               style={{ fontFamily: 'Playfair Display, serif' }}>
               Camiseta {design?.name}
             </h1>
@@ -146,7 +146,7 @@ export default function ProductDetailPage() {
             {/* Buttons side by side */}
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <button onClick={handleAdd} disabled={!selectedProduct}
-                className={`flex-1 py-4 text-sm font-medium tracking-wide rounded-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed ${
+                className={`flex-1 py-4 min-h-[44px] text-sm font-medium tracking-wide rounded-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed ${
                   added
                     ? "bg-green-600 text-white"
                     : "bg-[#1e3a5f] text-white hover:bg-[#16304f] hover:shadow-lg hover:shadow-[#1e3a5f]/20"
@@ -154,7 +154,7 @@ export default function ProductDetailPage() {
                 {added ? "Agregado al carrito" : "Agregar al carrito"}
               </button>
               <button onClick={() => navigate("/cart")}
-                className="flex-1 py-4 border border-gray-200 text-gray-500 text-sm font-medium tracking-wide rounded-sm hover:border-[#1e3a5f] hover:text-[#1e3a5f] hover:scale-[1.02] transition-all duration-200">
+                className="flex-1 py-4 min-h-[44px] border border-gray-200 text-gray-500 text-sm font-medium tracking-wide rounded-sm hover:border-[#1e3a5f] hover:text-[#1e3a5f] hover:scale-[1.02] transition-all duration-200">
                 Ver carrito
               </button>
             </div>

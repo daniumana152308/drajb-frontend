@@ -59,18 +59,18 @@ export default function ProfilePage() {
     <div className="min-h-screen w-full bg-[#f7f7f5] flex flex-col overflow-x-hidden">
       <Navbar />
 
-      <main className="flex-1 w-full flex flex-col px-8 md:px-16 lg:px-24 py-12 md:py-16">
+      <main className="flex-1 w-full flex flex-col px-6 sm:px-8 md:px-16 lg:px-24 py-10 sm:py-12 md:py-16">
 
-        <div className="mb-10">
+        <div className="mb-8 sm:mb-10">
           <p className="text-xs text-gray-400 tracking-[0.25em] uppercase mb-2">Cuenta</p>
-          <h1 className="text-3xl md:text-4xl font-medium text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>
             Mi Perfil
           </h1>
         </div>
 
         <div className="w-full max-w-3xl">
 
-          <div className="bg-[#1e3a5f] rounded-lg p-8 mb-8 flex items-center gap-6">
+          <div className="bg-[#1e3a5f] rounded-lg p-6 sm:p-8 mb-6 sm:mb-8 flex items-center gap-4 sm:gap-6">
             <div className="w-16 h-16 rounded-md bg-white/10 border border-white/20 flex items-center justify-center text-white font-semibold text-2xl select-none flex-shrink-0"
               style={{ fontFamily: 'Playfair Display, serif' }}>
               {user?.firstName?.[0]}{user?.lastName?.[0]}
@@ -95,17 +95,17 @@ export default function ProfilePage() {
           )}
 
           <div className="bg-white border border-gray-100 rounded-lg overflow-hidden">
-            <div className="flex justify-between items-center px-8 py-6 border-b border-gray-100">
-              <h2 className="text-gray-700 font-medium text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>Datos personales</h2>
+            <div className="flex justify-between items-center px-6 sm:px-8 py-5 sm:py-6 border-b border-gray-100">
+              <h2 className="text-gray-700 font-medium text-base sm:text-lg" style={{ fontFamily: 'Playfair Display, serif' }}>Datos personales</h2>
               {!editing && (
                 <button onClick={() => setEditing(true)}
-                  className="text-xs text-[#1e3a5f] font-medium tracking-widest uppercase hover:underline underline-offset-4 hover:scale-105 transition-all duration-200">
+                  className="text-xs text-[#1e3a5f] font-medium tracking-widest uppercase hover:underline underline-offset-4 hover:scale-105 transition-all duration-200 min-h-[44px] flex items-center">
                   Editar
                 </button>
               )}
             </div>
 
-            <form onSubmit={handleSubmit} className="px-8 py-8 flex flex-col gap-6">
+            <form onSubmit={handleSubmit} className="px-6 sm:px-8 py-6 sm:py-8 flex flex-col gap-5 sm:gap-6">
               <div className="flex flex-col sm:flex-row gap-5">
                 <div className="flex-1">
                   <label className={labelClass}>Nombre</label>
@@ -142,11 +142,11 @@ export default function ProfilePage() {
               {editing && (
                 <div className="flex flex-col sm:flex-row gap-4 pt-3 border-t border-gray-100 mt-2">
                   <button type="submit" disabled={loading}
-                    className="flex-1 py-4 bg-[#1e3a5f] text-white text-sm font-medium tracking-wide rounded-md hover:bg-[#16304f] hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
+                    className="flex-1 py-4 min-h-[44px] bg-[#1e3a5f] text-white text-sm font-medium tracking-wide rounded-md hover:bg-[#16304f] hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed">
                     {loading ? "Guardando..." : "Guardar cambios"}
                   </button>
                   <button type="button" onClick={handleCancel}
-                    className="flex-1 py-4 border border-gray-200 text-gray-400 text-sm tracking-wide rounded-md hover:border-gray-300 hover:text-gray-600 hover:scale-[1.02] transition-all duration-200">
+                    className="flex-1 py-4 min-h-[44px] border border-gray-200 text-gray-400 text-sm tracking-wide rounded-md hover:border-gray-300 hover:text-gray-600 hover:scale-[1.02] transition-all duration-200">
                     Cancelar
                   </button>
                 </div>
