@@ -39,19 +39,19 @@ export default function CatalogPage() {
 
       <main className="flex-1 flex flex-col w-full">
 
-        <div className="w-full px-8 md:px-16 lg:px-24 pt-12 pb-8">
+        <div className="w-full px-6 sm:px-8 md:px-16 lg:px-24 pt-10 sm:pt-12 pb-8">
           <p className="text-xs text-gray-400 tracking-[0.25em] uppercase mb-2">Explora</p>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <h1 className="text-3xl md:text-4xl font-medium text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800" style={{ fontFamily: 'Playfair Display, serif' }}>
               Catálogo
             </h1>
-            <div className="flex flex-wrap items-end gap-6 pb-1">
+            <div className="flex flex-wrap items-end gap-4 sm:gap-6 pb-1">
               <div className="flex flex-col gap-1">
                 <label className="text-[10px] text-gray-400 tracking-[0.2em] uppercase">Diseño</label>
                 <select
                   value={filterDesign}
                   onChange={(e) => setFilterDesign(e.target.value)}
-                  className="bg-white border border-gray-200 text-gray-600 text-sm rounded-md px-4 py-2.5 focus:outline-none focus:border-[#1e3a5f] transition-colors duration-200 min-w-[180px]">
+                  className="bg-white border border-gray-200 text-gray-600 text-sm rounded-md px-4 py-2.5 focus:outline-none focus:border-[#1e3a5f] transition-colors duration-200 min-w-[160px] sm:min-w-[180px] min-h-[44px]">
                   {designs.map((d) => <option key={d} value={d}>{d === "all" ? "Todos los diseños" : d}</option>)}
                 </select>
               </div>
@@ -69,7 +69,7 @@ export default function CatalogPage() {
         )}
 
         {!loading && !error && filtered.length > 0 && (
-          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-gray-200">
             {filtered.map((group) => {
               const representative = group[0];
               const sizes = group.map((p) => p.size?.label).filter(Boolean);

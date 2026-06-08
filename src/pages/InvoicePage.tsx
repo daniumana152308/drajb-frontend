@@ -44,24 +44,24 @@ export default function InvoicePage() {
     <div className="min-h-screen w-full bg-[#f7f7f5] flex flex-col overflow-x-hidden">
       <Navbar />
 
-      <main className="flex-1 w-full flex flex-col px-8 md:px-16 lg:px-24 py-12 md:py-16">
+      <main className="flex-1 w-full flex flex-col px-6 sm:px-8 md:px-16 lg:px-24 py-10 sm:py-12 md:py-16">
 
         <div className="w-full max-w-4xl mx-auto">
 
-          <div className="flex justify-between items-center mb-6 print:hidden">
+          <div className="flex justify-between items-center mb-6 print:hidden gap-4">
             <button onClick={() => navigate("/catalog")}
-              className="text-gray-400 hover:text-gray-700 text-sm tracking-wide transition-all duration-200 hover:scale-105">
+              className="text-gray-400 hover:text-gray-700 text-sm tracking-wide transition-all duration-200 hover:scale-105 min-h-[44px] flex items-center">
               ← Volver al catálogo
             </button>
             <button onClick={handlePrint}
-              className="px-6 py-3 border border-gray-200 text-gray-500 text-sm rounded-md hover:border-[#1e3a5f] hover:text-[#1e3a5f] hover:scale-105 transition-all duration-200">
+              className="px-4 sm:px-6 py-3 min-h-[44px] border border-gray-200 text-gray-500 text-sm rounded-md hover:border-[#1e3a5f] hover:text-[#1e3a5f] hover:scale-105 transition-all duration-200 whitespace-nowrap">
               Imprimir factura
             </button>
           </div>
 
           <div className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm">
 
-            <div className="bg-[#1e3a5f] px-10 md:px-14 py-8 flex justify-between items-start">
+            <div className="bg-[#1e3a5f] px-6 sm:px-10 md:px-14 py-6 sm:py-8 flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6">
               <div>
                 <span className="text-white font-semibold tracking-[0.15em] text-base uppercase select-none"
                   style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -69,7 +69,7 @@ export default function InvoicePage() {
                 </span>
                 <p className="text-white/30 text-sm mt-1.5">Tienda de Camisetas</p>
               </div>
-              <div className="text-right">
+              <div className="text-left sm:text-right">
                 <span className="inline-block border border-white/30 text-white text-xs tracking-[0.2em] uppercase px-4 py-2 mb-3">
                   Factura
                 </span>
@@ -79,9 +79,9 @@ export default function InvoicePage() {
               </div>
             </div>
 
-            <div className="px-10 md:px-14 py-10">
+            <div className="px-6 sm:px-10 md:px-14 py-8 sm:py-10">
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-10 pb-10 border-b border-gray-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-8 sm:mb-10 pb-8 sm:pb-10 border-b border-gray-100">
                 <div>
                   <p className="text-[10px] text-[#1e3a5f] tracking-[0.25em] uppercase font-medium mb-4">Emisor</p>
                   <p className="text-gray-700 font-medium text-base" style={{ fontFamily: 'Playfair Display, serif' }}>DRAJB Store S.A.</p>
@@ -145,9 +145,9 @@ export default function InvoicePage() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center pt-7 border-t border-gray-100">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pt-7 border-t border-gray-100">
                 <p className="text-gray-400 text-sm italic">{bill.notes}</p>
-                <span className="border border-green-200 text-green-600 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-sm">
+                <span className="border border-green-200 text-green-600 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-sm flex-shrink-0">
                   Completada
                 </span>
               </div>
