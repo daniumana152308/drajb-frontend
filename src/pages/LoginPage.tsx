@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { login, register } from "../services/Api";
 
-const inputClass = "w-full bg-white border border-gray-200 rounded-md px-5 py-4 text-base text-gray-800 placeholder:text-gray-300 focus:outline-none focus:border-[#1e3a5f] focus:ring-1 focus:ring-[#1e3a5f]/20 transition-all duration-200";
-const labelClass = "block text-xs font-medium text-gray-400 uppercase tracking-widest mb-2";
+const inputClass = "w-full bg-gray-800/60 border border-white/10 rounded-xl px-5 py-4 text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/70 focus:ring-2 focus:ring-purple-500/20 transition-all duration-200";
+const labelClass = "block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2";
 
 export default function LoginPage() {
   const { login: setAuth } = useAuth();
@@ -33,74 +33,77 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen w-full flex bg-[#f7f7f5] overflow-x-hidden">
+    <div className="min-h-screen w-full flex overflow-x-hidden">
 
-      {/* Left panel */}
-      <div className="hidden lg:flex w-5/12 bg-[#1e3a5f] flex-col justify-between px-16 py-16 relative overflow-hidden">
+      {/* Left panel — vibrant gradient */}
+      <div className="hidden lg:flex w-5/12 bg-gradient-to-br from-purple-700 via-pink-600 to-orange-500 flex-col justify-between px-16 py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20" />
         <div className="absolute inset-0"
-          style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.015) 60px, rgba(255,255,255,0.015) 61px)' }} />
+          style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(255,255,255,0.04) 60px, rgba(255,255,255,0.04) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(255,255,255,0.04) 60px, rgba(255,255,255,0.04) 61px)' }} />
 
         <div className="relative">
-          <span className="text-white font-semibold tracking-[0.2em] text-2xl uppercase select-none"
-            style={{ fontFamily: 'Playfair Display, serif' }}>
+          <span
+            className="text-white font-black tracking-[0.22em] text-2xl uppercase select-none"
+            style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
             DRAJB Store
           </span>
         </div>
 
         <div className="relative">
-          <h2 className="text-white/90 font-medium leading-snug mb-6 select-none"
-            style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)' }}>
+          <h2 className="text-white font-black leading-none mb-6 select-none"
+            style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(3rem, 5vw, 5.5rem)', letterSpacing: '0.04em' }}>
             Diseño que<br />
-            <span className="italic text-white/50">te define.</span>
+            <span className="text-white/60">te define.</span>
           </h2>
-          <p className="text-white/30 text-lg leading-relaxed">
-            Encuentra camisetas únicas, con diseños que reflejan tu estilo. Calidad y forma en cada prenda.
+          <p className="text-white/50 text-lg leading-relaxed">
+            Encuentra camisetas únicas con diseños que reflejan tu estilo. Calidad y forma en cada prenda.
           </p>
         </div>
 
         <div className="relative flex gap-10">
-          <div>
-            <p className="text-white font-semibold text-3xl" style={{ fontFamily: 'Playfair Display, serif' }}>+30</p>
-            <p className="text-white/30 text-sm tracking-widest uppercase mt-1">Diseños</p>
-          </div>
-          <div className="w-px bg-white/10" />
-          <div>
-            <p className="text-white font-semibold text-3xl" style={{ fontFamily: 'Playfair Display, serif' }}>6</p>
-            <p className="text-white/30 text-sm tracking-widest uppercase mt-1">Tallas</p>
-          </div>
-          <div className="w-px bg-white/10" />
-          <div>
-            <p className="text-white font-semibold text-3xl" style={{ fontFamily: 'Playfair Display, serif' }}>100%</p>
-            <p className="text-white/30 text-sm tracking-widest uppercase mt-1">Algodón</p>
-          </div>
+          {[
+            { num: "+30", label: "Diseños" },
+            { num: "6", label: "Tallas" },
+            { num: "100%", label: "Algodón" },
+          ].map(({ num, label }, i, arr) => (
+            <div key={label} className="flex gap-10 items-start">
+              <div>
+                <p className="text-white font-black text-3xl" style={{ fontFamily: 'Bebas Neue, sans-serif' }}>{num}</p>
+                <p className="text-white/40 text-xs tracking-widest uppercase mt-1 font-semibold">{label}</p>
+              </div>
+              {i < arr.length - 1 && <div className="w-px bg-white/20 self-stretch" />}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Right form panel */}
-      <div className="flex-1 flex items-center justify-center p-6 sm:p-8 md:p-16">
-        <div className="w-full max-w-lg">
+      {/* Right panel — dark glass form */}
+      <div className="flex-1 flex items-center justify-center p-6 sm:p-8 md:p-12">
+        <div className="w-full max-w-lg bg-gray-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/40">
 
-          <div className="lg:hidden text-center mb-10">
-            <span className="text-[#1e3a5f] font-semibold tracking-[0.2em] text-xl uppercase select-none"
-              style={{ fontFamily: 'Playfair Display, serif' }}>
+          <div className="lg:hidden text-center mb-8">
+            <span
+              className="font-black tracking-[0.22em] text-xl uppercase select-none bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+              style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
               DRAJB Store
             </span>
           </div>
 
-          <h1 className="text-3xl font-medium text-gray-800 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h1 className="text-3xl font-black text-white mb-1" style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>
             {mode === "login" ? "Bienvenido" : "Crear cuenta"}
           </h1>
-          <p className="text-gray-400 text-base mb-10">
+          <p className="text-gray-400 text-sm mb-8">
             {mode === "login" ? "Ingresa tus datos para continuar" : "Completa el formulario para registrarte"}
           </p>
 
-          <div className="flex gap-8 border-b border-gray-200 mb-10">
+          {/* Mode toggle */}
+          <div className="flex gap-2 mb-8 bg-gray-800/60 rounded-xl p-1">
             {(["login", "register"] as const).map((m) => (
               <button key={m} onClick={() => { setMode(m); setError(""); }}
-                className={`pb-4 text-base tracking-wide transition-all duration-200 border-b-2 -mb-px hover:scale-105 ${
+                className={`flex-1 py-2.5 text-sm font-bold tracking-wide transition-all duration-200 rounded-lg ${
                   mode === m
-                    ? "border-[#1e3a5f] text-[#1e3a5f] font-medium"
-                    : "border-transparent text-gray-400 hover:text-gray-600"
+                    ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/30"
+                    : "text-gray-500 hover:text-gray-300"
                 }`}>
                 {m === "login" ? "Iniciar sesión" : "Registrarse"}
               </button>
@@ -141,11 +144,12 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <p className="text-red-500 text-sm bg-red-50 border border-red-100 px-4 py-3 rounded-md">{error}</p>
+              <p className="text-rose-400 text-sm bg-rose-500/10 border border-rose-500/20 px-4 py-3 rounded-xl">{error}</p>
             )}
 
             <button type="submit" disabled={loading}
-              className="mt-2 w-full py-4 min-h-[44px] bg-[#1e3a5f] hover:bg-[#16304f] text-white text-base font-medium tracking-wider rounded-md transition-all duration-200 hover:shadow-lg hover:shadow-[#1e3a5f]/20 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
+              className="mt-2 w-full py-4 min-h-[44px] bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 hover:from-purple-500 hover:via-blue-500 hover:to-cyan-400 text-white text-base font-black tracking-widest rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-purple-500/30 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.12em' }}>
               {loading ? "Cargando..." : mode === "login" ? "Entrar" : "Crear cuenta"}
             </button>
           </form>
