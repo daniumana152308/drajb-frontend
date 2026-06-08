@@ -5,7 +5,7 @@ const CLIENTS_URL = `${API_URL}/clients`;
 
 export async function getClients(): Promise<Client[]> {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(CLIENTS_URL);
 
         if (!response.ok) {
             throw new Error("Error fetching clients");
