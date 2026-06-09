@@ -12,17 +12,17 @@ html, body, #root { height: 100%; width: 100%; }
 
 body {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #16213e, #1a0533, #0d1b3e, #1e1045);
+  background: linear-gradient(-45deg, #eff6ff, #fff7ed, #e0f2fe, #fef3c7, #f0f9ff, #fff5f0);
   background-size: 400% 400%;
-  animation: gradientShift 14s ease infinite;
-  color: #e2e8f0;
+  animation: gradientShift 16s ease infinite;
+  color: #111827;
   -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
-::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #7c3aed, #3b82f6); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #9333ea, #2563eb); }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.06); }
+::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #2563eb, #f97316); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #1d4ed8, #ea6f0a); }
 
 @media print {
   body {
