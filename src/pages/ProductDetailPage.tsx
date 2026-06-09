@@ -61,8 +61,7 @@ export default function ProductDetailPage() {
         <div className="flex-1 flex flex-col items-center justify-center gap-5">
           <p className="text-gray-500 text-base font-semibold">Producto no encontrado.</p>
           <button onClick={() => navigate("/catalog")}
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-black rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-200"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.1em' }}>
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-black tracking-wide rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-200">
             Volver al catálogo
           </button>
         </div>
@@ -113,8 +112,8 @@ export default function ProductDetailPage() {
             <p className="text-xs text-blue-500/70 tracking-[0.3em] uppercase mb-2 font-bold">
               Diseño — {design?.name}
             </p>
-            <h1 className="text-gray-900 font-black leading-none mb-3"
-              style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(2rem, 5vw, 4rem)', letterSpacing: '0.04em' }}>
+            <h1 className="text-gray-900 font-black leading-tight mb-3"
+              style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
               Camiseta {design?.name}
             </h1>
 
@@ -125,7 +124,7 @@ export default function ProductDetailPage() {
             {/* Price */}
             <div className="mb-5 pb-5 border-b border-gray-200">
               <span className="font-black text-orange-500"
-                style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', letterSpacing: '0.04em' }}>
+                style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)' }}>
                 ₡{selectedProduct ? Number(selectedProduct.price).toLocaleString("es-CR") : "—"}
               </span>
             </div>
@@ -161,8 +160,7 @@ export default function ProductDetailPage() {
                   added
                     ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg shadow-emerald-500/30"
                     : "bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white shadow-lg shadow-blue-500/25 hover:shadow-xl"
-                }`}
-                style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.1em' }}>
+                }`}>
                 {added ? "✓ Agregado al carrito" : "Agregar al carrito"}
               </button>
               <button onClick={() => navigate("/cart")}

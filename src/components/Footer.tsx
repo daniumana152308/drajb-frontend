@@ -5,9 +5,7 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
 
                     <div>
-                        <span
-                            className="font-black tracking-[0.22em] text-base uppercase select-none bg-gradient-to-r from-blue-300 to-orange-400 bg-clip-text text-transparent"
-                            style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                        <span className="font-extrabold tracking-widest text-base uppercase select-none bg-gradient-to-r from-blue-300 to-orange-400 bg-clip-text text-transparent">
                             DRAJB Store
                         </span>
                         <p className="text-blue-200/30 text-xs mt-1 tracking-wide">Camisetas con diseño único.</p>

@@ -36,9 +36,9 @@ export default function CartPage() {
 
       <main className="flex-1 flex flex-col w-full px-8 sm:px-12 md:px-16 lg:px-24 py-10 sm:py-12 md:py-16">
         <div className="mb-8 sm:mb-10 text-center">
-          <p className="text-orange-500/60 text-xs tracking-[0.3em] uppercase mb-2 font-bold">✦ Resumen ✦</p>
-          <h1 className="text-gray-900 font-black leading-none"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '0.05em' }}>
+          <p className="text-orange-500/60 text-xs tracking-widest uppercase mb-2 font-bold">✦ Resumen ✦</p>
+          <h1 className="text-gray-900 font-black leading-tight"
+            style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)' }}>
             Tu Carrito
           </h1>
         </div>
@@ -46,15 +46,14 @@ export default function CartPage() {
         {items.length === 0 ? (
           <div className="flex-1 flex flex-col items-center justify-center bg-white border border-gray-200 rounded-2xl py-32 gap-6 text-center px-6 shadow-sm">
             <div className="text-7xl">🛒</div>
-            <p className="text-orange-500/60 text-xs tracking-[0.35em] uppercase font-black">Vacío</p>
+            <p className="text-orange-500/60 text-xs tracking-widest uppercase font-black">Vacío</p>
             <h2 className="text-gray-800 font-black"
-              style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(1.8rem, 4vw, 3rem)', letterSpacing: '0.05em' }}>
+              style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)' }}>
               No has agregado nada aún
             </h2>
-            <p className="text-gray-500 text-base max-w-sm">Explora nuestra colección y encuentra la camiseta perfecta para ti.</p>
+            <p className="text-gray-500 text-base max-w-sm font-medium">Explora nuestra colección y encuentra la camiseta perfecta para ti.</p>
             <button onClick={() => navigate("/catalog")}
-              className="mt-2 px-10 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-black tracking-widest rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 active:scale-[0.98] transition-all duration-200"
-              style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.12em' }}>
+              className="mt-2 px-10 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-extrabold tracking-wide rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 active:scale-[0.98] transition-all duration-200">
               Ver catálogo
             </button>
           </div>
@@ -75,7 +74,7 @@ export default function CartPage() {
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[10px] text-blue-500/70 tracking-[0.2em] uppercase mb-1 truncate font-bold">
+                        <p className="text-[10px] text-blue-500/70 tracking-widest uppercase mb-1 truncate font-bold">
                           {item.product.design?.name} · Talla {item.product.size?.label}
                         </p>
                         <h3 className="text-gray-800 font-bold text-base sm:text-lg mb-2 leading-snug">{item.product.name}</h3>
@@ -106,8 +105,7 @@ export default function CartPage() {
             {/* Summary */}
             <div className="lg:w-[400px] flex-shrink-0 lg:mr-16">
               <div className="bg-gradient-to-br from-blue-50 via-white to-orange-50 border border-blue-200/60 rounded-2xl p-6 sm:p-8 lg:sticky lg:top-24 shadow-lg shadow-blue-500/10">
-                <h2 className="text-gray-900 font-black text-xl sm:text-2xl mb-6 pb-6 border-b border-gray-200 leading-none"
-                  style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>
+                <h2 className="text-gray-900 font-black text-xl sm:text-2xl mb-6 pb-6 border-b border-gray-200 leading-tight">
                   Resumen del pedido
                 </h2>
                 <div className="flex flex-col gap-3 mb-6 max-h-52 overflow-y-auto">
@@ -126,7 +124,7 @@ export default function CartPage() {
                   <div className="flex justify-between items-center">
                     <span className="text-gray-800 font-bold text-lg">Total</span>
                     <span className="font-black text-2xl sm:text-3xl text-orange-500"
-                      style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.04em' }}>
+                      style={{ fontSize: 'clamp(1.5rem, 4vw, 2.2rem)' }}>
                       ₡{total.toLocaleString("es-CR")}
                     </span>
                   </div>
@@ -135,12 +133,11 @@ export default function CartPage() {
                   <p className="text-red-600 text-sm bg-red-50 border border-red-200 px-4 py-3 rounded-xl mb-5 font-medium">{error}</p>
                 )}
                 <button onClick={handleCheckout} disabled={loading}
-                  className="w-full py-4 sm:py-5 min-h-[44px] bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-base font-black tracking-widest rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed mb-4"
-                  style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.12em' }}>
+                  className="w-full py-4 sm:py-5 min-h-[44px] bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-base font-extrabold tracking-wide rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed mb-4">
                   {loading ? "Procesando..." : "Confirmar compra"}
                 </button>
                 <button onClick={() => navigate("/catalog")}
-                  className="w-full py-4 sm:py-5 min-h-[44px] border-2 border-gray-200 text-gray-500 text-base font-bold tracking-widest rounded-xl hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 hover:scale-[1.02] transition-all duration-200">
+                  className="w-full py-4 sm:py-5 min-h-[44px] border-2 border-gray-200 text-gray-500 text-base font-bold tracking-wide rounded-xl hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 hover:scale-[1.02] transition-all duration-200">
                   Seguir comprando
                 </button>
               </div>

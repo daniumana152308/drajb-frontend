@@ -40,8 +40,8 @@ export default function LoginPage() {
         {/* Brand */}
         <div className="mb-8">
           <span
-            className="font-black uppercase select-none bg-gradient-to-r from-blue-700 to-orange-500 bg-clip-text text-transparent"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(2rem, 6vw, 3rem)', letterSpacing: '0.2em' }}>
+            className="font-extrabold uppercase select-none bg-gradient-to-r from-blue-700 to-orange-500 bg-clip-text text-transparent tracking-widest"
+            style={{ fontSize: 'clamp(1.8rem, 6vw, 2.5rem)' }}>
             DRAJB Store
           </span>
           <p className="text-gray-500 text-sm mt-2 font-medium">Diseño que te define.</p>
@@ -56,8 +56,7 @@ export default function LoginPage() {
           ].map(({ num, label, color }, i, arr) => (
             <div key={label} className="flex items-center gap-8">
               <div className="text-center">
-                <p className={`font-black text-2xl leading-none ${color}`}
-                  style={{ fontFamily: 'Bebas Neue, sans-serif' }}>{num}</p>
+                <p className={`font-black text-2xl leading-none ${color}`}>{num}</p>
                 <p className="text-gray-400 text-[10px] tracking-widest uppercase mt-1 font-semibold">{label}</p>
               </div>
               {i < arr.length - 1 && <div className="w-px h-8 bg-gray-300" />}
@@ -68,11 +67,10 @@ export default function LoginPage() {
         {/* Glass card */}
         <div className="bg-white/75 backdrop-blur-xl border border-white/80 rounded-3xl p-8 sm:p-10 shadow-2xl shadow-blue-500/10">
 
-          <h1 className="text-2xl font-black text-gray-900 text-center mb-1"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>
+          <h1 className="text-2xl font-black text-gray-900 text-center mb-1">
             {mode === "login" ? "Bienvenido" : "Crear cuenta"}
           </h1>
-          <p className="text-gray-400 text-sm text-center mb-7">
+          <p className="text-gray-400 text-sm text-center mb-7 font-medium">
             {mode === "login" ? "Ingresa tus datos para continuar" : "Completa el formulario para registrarte"}
           </p>
 
@@ -128,8 +126,7 @@ export default function LoginPage() {
             )}
 
             <button type="submit" disabled={loading}
-              className="mt-2 w-full py-4 min-h-[44px] bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-base font-black tracking-widest rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.12em' }}>
+              className="mt-2 w-full py-4 min-h-[44px] bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-base font-extrabold tracking-wide rounded-xl transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
               {loading ? "Cargando..." : mode === "login" ? "Entrar" : "Crear cuenta"}
             </button>
           </form>

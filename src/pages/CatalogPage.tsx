@@ -53,7 +53,7 @@ export default function CatalogPage() {
         <div className="w-full px-8 sm:px-12 md:px-16 lg:px-24 pt-10 sm:pt-12 pb-8 text-center">
           <p className="text-orange-500/60 text-xs tracking-[0.3em] uppercase mb-2 font-bold">✦ Explora ✦</p>
           <h1 className="text-gray-900 font-black leading-none mb-6"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: 'clamp(2.5rem, 7vw, 6rem)', letterSpacing: '0.05em' }}>
+            style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}>
             Catálogo
           </h1>
 
