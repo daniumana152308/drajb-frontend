@@ -98,6 +98,7 @@ export default function CatalogPage() {
               return (
                 <div
                   key={representative.design?.id}
+                  data-testid="product-card"
                   className="bg-white border border-gray-200 rounded-2xl overflow-hidden group cursor-pointer hover:border-blue-400 hover:shadow-2xl hover:shadow-blue-500/15 hover:scale-[1.02] transition-all duration-300"
                   onClick={() => navigate(`/product/${representative.design?.id}`)}>
 

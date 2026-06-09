@@ -11,7 +11,7 @@ describe("04 - Catálogo y detalle de producto", () => {
 
   it("carga y muestra productos en el catálogo", () => {
     cy.contains("Catálogo").should("be.visible");
-    cy.get(".group").should("have.length.greaterThan", 0);
+    cy.get("[data-testid='product-card']").should("have.length.greaterThan", 0);
   });
 
   it("filtra productos por diseño", () => {
@@ -20,13 +20,13 @@ describe("04 - Catálogo y detalle de producto", () => {
   });
 
   it("navega al detalle del producto al hacer clic en una tarjeta", () => {
-    cy.get(".group").first().click();
+    cy.get("[data-testid='product-card']").first().click();
     cy.url().should("include", "/product/");
     cy.contains("Agregar al carrito").should("be.visible");
   });
 
   it("permite seleccionar una talla en el detalle del producto", () => {
-    cy.get(".group").first().click();
+    cy.get("[data-testid='product-card']").first().click();
     cy.url().should("include", "/product/");
     cy.get("button").contains("M").click();
     cy.get("button").contains("M").should("be.visible");
