@@ -25,10 +25,18 @@ body {
 ::-webkit-scrollbar-thumb:hover { background: linear-gradient(to bottom, #1d4ed8, #ea6f0a); }
 
 @media print {
+  nav, footer, header { display: none !important; }
   body {
     background: white !important;
     animation: none !important;
     color: black !important;
   }
   * { animation: none !important; }
+  .no-print { display: none !important; }
+  body > *:not(#root) { display: none !important; }
+  #invoice-content {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  main { padding: 0 !important; }
 }
