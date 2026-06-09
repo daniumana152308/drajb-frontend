@@ -41,14 +41,14 @@ export default function InvoicePage() {
   const shippingDate = new Date(bill.shippingDate + "T00:00:00").toLocaleDateString("es-CR", { year: "numeric", month: "long", day: "numeric" });
 
   return (
-    <div className="min-h-screen w-full flex flex-col overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col overflow-x-hidden print:bg-white">
       <Navbar />
 
-      <main className="flex-1 w-full flex flex-col px-8 sm:px-12 md:px-16 lg:px-24 py-10 sm:py-12 md:py-16">
+      <main className="flex-1 w-full flex flex-col px-8 sm:px-12 md:px-16 lg:px-24 py-10 sm:py-12 md:py-16 print:px-0 print:py-0">
 
         <div className="w-full max-w-4xl mx-auto">
 
-          <div className="flex justify-between items-center mb-6 print:hidden gap-4">
+          <div className="flex justify-between items-center mb-6 no-print gap-4">
             <button onClick={() => navigate("/catalog")}
               className="text-gray-500 hover:text-blue-600 text-sm font-semibold tracking-wide transition-all duration-200 hover:scale-105 min-h-[44px] flex items-center gap-2">
               ← Volver al catálogo
@@ -59,7 +59,7 @@ export default function InvoicePage() {
             </button>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg shadow-blue-500/8">
+          <div id="invoice-content" className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-lg shadow-blue-500/8 print:rounded-none print:border-0 print:shadow-none">
 
             {/* Invoice header */}
             <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-orange-700 px-6 sm:px-10 md:px-14 py-6 sm:py-8 flex flex-col sm:flex-row justify-between items-start gap-4 sm:gap-6 relative overflow-hidden">

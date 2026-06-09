@@ -9,6 +9,7 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import CartPage from "./pages/CartPage";
 import InvoicePage from "./pages/InvoicePage";
 import ProfilePage from "./pages/ProfilePage";
+import OrderHistoryPage from "./pages/OrderHistoryPage";
 import "./index.css";
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
             <Route path="/cart" element={<ProtectedRoute><CartPage /></ProtectedRoute>} />
             <Route path="/invoice" element={<ProtectedRoute><InvoicePage /></ProtectedRoute>} />
             <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+            <Route path="/orders" element={<ProtectedRoute><OrderHistoryPage /></ProtectedRoute>} />
             <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </CartProvider>
