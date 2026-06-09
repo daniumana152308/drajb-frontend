@@ -12,14 +12,14 @@ export default function Navbar() {
     const active = (path: string) => location.pathname === path;
 
     return (
-        <nav className="sticky top-0 z-50 bg-gray-950/90 backdrop-blur-md border-b border-white/10 w-full">
-            <div className="w-full px-6 md:px-16 lg:px-24">
+        <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200/80 shadow-sm w-full">
+            <div className="w-full px-8 md:px-16 lg:px-24">
                 <div className="h-20 flex items-center justify-between">
 
                     {/* Brand */}
                     <Link to="/home" className="flex items-center gap-3 hover:scale-105 transition-transform duration-200">
                         <span
-                            className="font-black uppercase select-none bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent text-xl tracking-widest"
+                            className="font-black uppercase select-none bg-gradient-to-r from-blue-700 to-orange-500 bg-clip-text text-transparent text-xl"
                             style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.22em' }}>
                             DRAJB Store
                         </span>
@@ -35,25 +35,25 @@ export default function Navbar() {
                             ].map(({ path, label }) => (
                                 <Link key={path} to={path}
                                     className={`text-sm font-semibold tracking-wide transition-all duration-200 hover:scale-105 relative group ${
-                                        active(path) ? "text-white" : "text-white/50 hover:text-white/90"
+                                        active(path) ? "text-blue-700" : "text-gray-600 hover:text-blue-600"
                                     }`}>
                                     {label}
-                                    <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transition-transform duration-200 origin-left ${
+                                    <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full transition-transform duration-200 origin-left ${
                                         active(path) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                                     }`} />
                                 </Link>
                             ))}
 
                             <Link to="/cart" className={`relative text-sm font-semibold tracking-wide transition-all duration-200 hover:scale-105 group ${
-                                active("/cart") ? "text-white" : "text-white/50 hover:text-white/90"
+                                active("/cart") ? "text-blue-700" : "text-gray-600 hover:text-blue-600"
                             }`}>
                                 🛒 Carrito
                                 {totalItems > 0 && (
-                                    <span className="absolute -top-2.5 -right-5 bg-gradient-to-r from-pink-500 to-orange-500 text-white text-[10px] font-black rounded-full w-5 h-5 flex items-center justify-center shadow-lg shadow-pink-500/50">
+                                    <span className="absolute -top-2.5 -right-5 bg-orange-500 text-white text-[10px] font-black rounded-full w-5 h-5 flex items-center justify-center shadow-md shadow-orange-500/40">
                                         {totalItems}
                                     </span>
                                 )}
-                                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full transition-transform duration-200 origin-left ${
+                                <span className={`absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-orange-500 rounded-full transition-transform duration-200 origin-left ${
                                     active("/cart") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                                 }`} />
                             </Link>
@@ -63,9 +63,9 @@ export default function Navbar() {
                     {/* User + logout */}
                     {user && (
                         <div className="hidden md:flex items-center gap-4 pr-2">
-                            <span className="text-white/40 text-sm font-medium">{user.firstName} {user.lastName}</span>
+                            <span className="text-gray-500 text-sm font-medium">{user.firstName} {user.lastName}</span>
                             <button onClick={handleLogout}
-                                className="text-xs font-bold text-rose-400 hover:text-rose-300 tracking-widest uppercase transition-all duration-200 hover:scale-105 border border-rose-500/30 hover:border-rose-400/60 px-3 py-1.5 rounded-full hover:bg-rose-500/10">
+                                className="text-xs font-bold text-red-500 hover:text-red-600 tracking-widest uppercase transition-all duration-200 hover:scale-105 border border-red-200 hover:border-red-400 px-3 py-1.5 rounded-full hover:bg-red-50">
                                 Salir
                             </button>
                         </div>
@@ -75,7 +75,7 @@ export default function Navbar() {
 
             {/* Mobile nav */}
             {user && (
-                <div className="md:hidden border-t border-white/10 flex justify-around bg-gray-950/95">
+                <div className="md:hidden border-t border-gray-200 flex justify-around bg-white/98">
                     {[
                         { path: "/home", label: "Inicio", icon: "🏠" },
                         { path: "/catalog", label: "Catálogo", icon: "👕" },
@@ -84,19 +84,19 @@ export default function Navbar() {
                     ].map(({ path, label, icon, badge }) => (
                         <Link key={path} to={path}
                             className={`relative flex flex-col items-center justify-center gap-0.5 px-3 min-h-[52px] text-[11px] font-semibold tracking-wide transition-all duration-200 ${
-                                active(path) ? "text-purple-400" : "text-white/30 hover:text-white/70"
+                                active(path) ? "text-blue-600" : "text-gray-400 hover:text-gray-700"
                             }`}>
                             <span className="text-base">{icon}</span>
                             {label}
                             {badge && badge > 0 && (
-                                <span className="absolute top-1 right-1 bg-gradient-to-r from-pink-500 to-orange-500 text-white text-[9px] font-black rounded-full w-4 h-4 flex items-center justify-center">
+                                <span className="absolute top-1 right-1 bg-orange-500 text-white text-[9px] font-black rounded-full w-4 h-4 flex items-center justify-center">
                                     {badge}
                                 </span>
                             )}
                         </Link>
                     ))}
                     <button onClick={handleLogout}
-                        className="text-rose-400/60 text-[11px] font-semibold tracking-wide hover:text-rose-400 transition-all duration-200 px-3 min-h-[52px] flex flex-col items-center justify-center gap-0.5">
+                        className="text-red-400 text-[11px] font-semibold tracking-wide hover:text-red-600 transition-all duration-200 px-3 min-h-[52px] flex flex-col items-center justify-center gap-0.5">
                         <span className="text-base">🚪</span>
                         Salir
                     </button>
