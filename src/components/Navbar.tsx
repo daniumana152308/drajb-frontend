@@ -18,9 +18,7 @@ export default function Navbar() {
 
                     {/* Brand */}
                     <Link to="/home" className="flex items-center gap-3 hover:scale-105 transition-transform duration-200">
-                        <span
-                            className="font-black uppercase select-none bg-gradient-to-r from-blue-700 to-orange-500 bg-clip-text text-transparent text-xl"
-                            style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.22em' }}>
+                        <span className="font-extrabold uppercase select-none bg-gradient-to-r from-blue-700 to-orange-500 bg-clip-text text-transparent text-xl tracking-widest">
                             DRAJB Store
                         </span>
                     </Link>

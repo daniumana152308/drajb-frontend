@@ -27,8 +27,7 @@ export default function InvoicePage() {
         <div className="flex-1 flex flex-col items-center justify-center gap-5">
           <p className="text-gray-500 text-base font-semibold">No hay factura para mostrar.</p>
           <button onClick={() => navigate("/catalog")}
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-black rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-200"
-            style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.1em' }}>
+            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-orange-500 hover:from-blue-500 hover:to-orange-400 text-white text-sm font-extrabold tracking-wide rounded-xl hover:shadow-xl hover:shadow-blue-500/25 hover:scale-105 transition-all duration-200">
             Ir al catálogo
           </button>
         </div>
@@ -67,15 +66,13 @@ export default function InvoicePage() {
               <div className="absolute inset-0 opacity-[0.06]"
                 style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 30px, white 30px, white 31px), repeating-linear-gradient(90deg, transparent, transparent 30px, white 30px, white 31px)' }} />
               <div className="relative">
-                <span className="text-white font-black tracking-[0.22em] text-base uppercase select-none block mb-1"
-                  style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <span className="text-white font-extrabold tracking-widest text-base uppercase select-none block mb-1">
                   DRAJB Store
                 </span>
                 <p className="text-white/40 text-sm font-medium">Tienda de Camisetas</p>
               </div>
               <div className="relative text-left sm:text-right">
-                <span className="inline-block border-2 border-white/30 text-white text-xs tracking-[0.25em] uppercase px-4 py-2 mb-3 rounded-lg font-black"
-                  style={{ fontFamily: 'Bebas Neue, sans-serif' }}>
+                <span className="inline-block border-2 border-white/30 text-white text-xs tracking-widest uppercase px-4 py-2 mb-3 rounded-lg font-extrabold">
                   Factura
                 </span>
                 <p className="text-white/55 text-sm font-medium">N° {String(bill.id).padStart(6, "0")}</p>
@@ -89,13 +86,13 @@ export default function InvoicePage() {
               {/* Issuer / Client */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 mb-8 sm:mb-10 pb-8 sm:pb-10 border-b border-gray-100">
                 <div>
-                  <p className="text-[10px] text-blue-600 tracking-[0.3em] uppercase font-black mb-4">Emisor</p>
+                  <p className="text-[10px] text-blue-600 tracking-widest uppercase font-black mb-4">Emisor</p>
                   <p className="text-gray-800 font-bold text-base">DRAJB Store S.A.</p>
                   <p className="text-gray-500 text-sm mt-2 font-medium">San José, Costa Rica</p>
                   <p className="text-gray-500 text-sm font-medium">info@drajbstore.cr</p>
                 </div>
                 <div>
-                  <p className="text-[10px] text-orange-500 tracking-[0.3em] uppercase font-black mb-4">Cliente</p>
+                  <p className="text-[10px] text-orange-500 tracking-widest uppercase font-black mb-4">Cliente</p>
                   <p className="text-gray-800 font-bold text-base">{user.firstName} {user.lastName}</p>
                   <p className="text-gray-500 text-sm mt-2 font-medium">{user.email}</p>
                   <p className="text-gray-500 text-sm font-medium">Envío estimado: {shippingDate}</p>
@@ -106,7 +103,7 @@ export default function InvoicePage() {
               <div className="hidden sm:block mb-10">
                 <div className="grid grid-cols-12 gap-4 pb-3 border-b border-gray-100 mb-2">
                   {[["Producto", "col-span-4 text-left"], ["Diseño", "col-span-2 text-left"], ["Talla", "col-span-1 text-center"], ["Cant.", "col-span-1 text-center"], ["Precio", "col-span-2 text-right"], ["Subtotal", "col-span-2 text-right"]].map(([h, cls]) => (
-                    <span key={h} className={`text-xs text-gray-400 tracking-[0.15em] uppercase font-black ${cls}`}>{h}</span>
+                    <span key={h} className={`text-xs text-gray-400 tracking-widest uppercase font-black ${cls}`}>{h}</span>
                   ))}
                 </div>
                 {items.map((item, i) => (
@@ -148,12 +145,8 @@ export default function InvoicePage() {
                     <span className="text-emerald-600 text-sm font-bold">Gratis 🚚</span>
                   </div>
                   <div className="flex justify-between pt-4 mt-1">
-                    <span className="text-gray-800 font-black text-base"
-                      style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.05em' }}>
-                      Total
-                    </span>
-                    <span className="font-black text-2xl text-orange-500"
-                      style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0.04em' }}>
+                    <span className="text-gray-800 font-black text-base">Total</span>
+                    <span className="font-black text-2xl text-orange-500">
                       ₡{Number(bill.totalAmount).toLocaleString("es-CR")}
                     </span>
                   </div>
@@ -163,7 +156,7 @@ export default function InvoicePage() {
               {/* Footer row */}
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pt-7 border-t border-gray-100">
                 <p className="text-gray-400 text-sm italic font-medium">{bill.notes}</p>
-                <span className="border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs tracking-[0.2em] uppercase px-4 py-2 rounded-lg flex-shrink-0 font-black">
+                <span className="border border-emerald-200 bg-emerald-50 text-emerald-700 text-xs tracking-widest uppercase px-4 py-2 rounded-lg flex-shrink-0 font-black">
                   ✓ Completada
                 </span>
               </div>
