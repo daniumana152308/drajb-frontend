@@ -48,9 +48,18 @@ export interface Sales {
   id: number;
   clientId: number;
   cartId: number;
-  total: number;
+  totalAmount: number;
   saleDate: string;
   status: string;
+}
+
+export interface SaleDetail {
+  id: number;
+  cartId?: number;
+  productId: number;
+  quantity: number;
+  unitPrice: number;
+  product?: Product;
 }
 
 export interface Bill {

@@ -1,5 +1,5 @@
 import { API_URL } from "../config/config";
-import type { Product, ShoppingCart, CartDetail, Sales, Bill, LoginResponse } from "../models/Types";
+import type { Product, ShoppingCart, CartDetail, Sales, SaleDetail, Bill, LoginResponse } from "../models/Types";
 
 // AUTH
 export async function login(email: string, password: string): Promise<LoginResponse> {
@@ -90,6 +90,19 @@ export async function createSale(
         }),
     });
     if (!res.ok) throw new Error("Error creando venta");
+    return res.json();
+}
+
+// ORDER HISTORY
+export async function getSalesByClient(clientId: number): Promise<Sales[]> {
+    const res = await fetch(`${API_URL}/sales/client/${clientId}`);
+    if (!res.ok) throw new Error("Error cargando historial de pedidos");
+    return res.json();
+}
+
+export async function getSaleDetails(saleId: number): Promise<SaleDetail[]> {
+    const res = await fetch(`${API_URL}/sales/${saleId}/details`);
+    if (!res.ok) throw new Error("Error cargando detalles del pedido");
     return res.json();
 }
 

@@ -29,6 +29,7 @@ export default function Navbar() {
                             {[
                                 { path: "/home", label: "Inicio" },
                                 { path: "/catalog", label: "Catálogo" },
+                                { path: "/orders", label: "Mis Pedidos" },
                                 { path: "/profile", label: "Mi perfil" },
                             ].map(({ path, label }) => (
                                 <Link key={path} to={path}
@@ -77,6 +78,7 @@ export default function Navbar() {
                     {[
                         { path: "/home", label: "Inicio", icon: "🏠" },
                         { path: "/catalog", label: "Catálogo", icon: "👕" },
+                        { path: "/orders", label: "Pedidos", icon: "📦" },
                         { path: "/cart", label: "Carrito", icon: "🛒", badge: totalItems },
                         { path: "/profile", label: "Perfil", icon: "👤" },
                     ].map(({ path, label, icon, badge }) => (
