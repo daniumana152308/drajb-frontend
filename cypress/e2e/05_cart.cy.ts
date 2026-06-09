@@ -16,7 +16,7 @@ describe("05 - Carrito de compras", () => {
 
   it("agrega un producto al carrito desde el detalle", () => {
     cy.visit("/catalog");
-    cy.get(".group").first().click();
+    cy.get("[data-testid='product-card']").first().click();
     cy.url().should("include", "/product/");
     cy.get("button").contains("M").click();
     cy.contains("Agregar al carrito").click();
@@ -25,7 +25,7 @@ describe("05 - Carrito de compras", () => {
 
   it("el contador del carrito se actualiza en el navbar", () => {
     cy.visit("/catalog");
-    cy.get(".group").first().click();
+    cy.get("[data-testid='product-card']").first().click();
     cy.get("button").contains("M").click();
     cy.contains("Agregar al carrito").click();
     cy.visit("/home");
@@ -34,7 +34,7 @@ describe("05 - Carrito de compras", () => {
 
   it("permite eliminar un producto del carrito", () => {
     cy.visit("/catalog");
-    cy.get(".group").first().click();
+    cy.get("[data-testid='product-card']").first().click();
     cy.get("button").contains("M").click();
     cy.contains("Agregar al carrito").click();
     cy.contains("Ver carrito").click();
